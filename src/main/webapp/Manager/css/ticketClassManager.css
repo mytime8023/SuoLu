@@ -1,0 +1,118 @@
+html,body{
+	width:100%;
+	height:100%;
+	margin:0px;
+	padding:0px;
+}
+.tsContainer {
+    width: 90%;
+    height: 85%;
+    position: absolute;
+    top: 3%;
+    left: 5%;
+}
+.row{
+	width:100%;
+	margin-top: 20px;
+}
+.title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+.row .cell {
+    width: 25%;
+	height: 400px;
+    float: left;
+    margin-left: 7%;
+	background-color: #d6ecb2;
+}
+.inner{
+	width: 95%;
+    height: 350px;
+    overflow-x: hidden;
+    overflow-y: auto;
+	margin-left: auto;
+    margin-right: auto;
+}
+.item {
+    width: 225px;
+    height: 25px;
+    cursor: pointer;
+    background-color: #c1dbe2;
+    border-radius: 7px;
+    margin-bottom: 5px;
+}
+.item:hover{
+	background-color: #108fb5;
+    color: white;
+}
+.item:hover .delete{
+	display:block;
+}
+.context {
+	width: 77%;
+    height: 20px;
+    float: left;
+    line-height: 20px;
+    margin-top: 2px;
+    margin-left: 15px;
+    font-size: 10px;
+}
+.item .context input{
+	display:none;
+}
+.delete {
+	display:none;
+    width: 16px;
+    height: 16px;
+    float: left;
+    margin-top: 4px;
+}
+.delete img{
+	width:100%;
+	height:100%;
+}
+.buttons {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    line-height: 40px;
+    height: 40px;
+}
+button {
+    width: 100px;
+    height: 25px;
+    border-radius: 5px;
+    border: none;
+    outline-style: none;
+    cursor: pointer;
+    background-color: #089e21;
+    color: white;
+}
+button:hover{
+	 background-color: #08cc2a;
+}
+.selected{
+	background-color: #108fb5;
+    color: white;
+}
+.dialogRow .cell{
+	float:left;
+}
+.dialogRow .cell textarea {
+    width: 99%;
+    height: 100px;
+    resize: none;
+}
+.dialogRow .cell input {
+    width: 100%;
+    height: 20;
+}
+.dialogRow .right {
+    width: 200px;
+}
+.dialogRow .left {
+    width: 70px;
+}

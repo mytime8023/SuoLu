@@ -1,0 +1,137 @@
+html,body{
+   margin:0px;
+   height:98%;
+   width:100%;
+}
+#comTables{
+	width:985px;
+	height:470px;
+	border:1px solid #0080ff;
+	background-color:#c0c0c0;
+	margin:auto;
+	margin-top:20px
+}
+#innerFrame{
+	text-align:center;
+	background-color:#ffffff;
+	width:965px;
+	height:450px;
+	margin:9px 9px 9px 9px;
+}
+.head{
+	background-color:#408080;
+	color:white;
+	font-weight:bold;
+	height:30px
+}
+.head .customer{
+	float:left;
+	width:100px;
+	height:30px;
+	line-height:30px;
+	border:1px solid #ffffff
+}
+.head .company{
+	float:left;
+	width:347px;
+	height:30px;
+	line-height:30px;
+	border:1px solid #ffffff
+}
+.head .shortName{
+	float:left;
+	width:156px;
+	height:30px;
+	line-height:30px;
+	border:1px solid #ffffff
+}
+.head .setupTime{
+	float:left;
+	width:90px;
+	height:30px;
+	line-height:30px;
+	border:1px solid #ffffff
+}
+.head .status{
+	float:left;
+	width:120px;
+	line-height:30px;
+	height:30px;
+	border:1px solid #ffffff
+}
+.head .options{
+	float:left;
+	width:140px;
+	height:30px;
+	line-height:30px;
+	border:1px solid #ffffff
+}
+.tableBody{
+	width:965px;
+	height:420px;
+	overflow-y:auto;
+	overflow-x:hidden
+}
+.row{
+	width: 965px;
+	cursor:pointer;
+	font-size: 20%;
+}
+.row:hover{
+	background-color:#ffff80
+}
+.customer{
+	float:left;
+	width:100px;
+	height:20px;
+	line-height:20px;
+	border:1px solid #c0c0c0
+}
+.company{
+	float:left;
+	width:347px;
+	height:20px;
+	line-height:20px;
+	border:1px solid #c0c0c0;
+	overflow: hidden;
+}
+.shortName{
+	float:left;
+	width:156px;
+	height:20px;
+	line-height:20px;
+	text-align:center;
+	border:1px solid #c0c0c0
+}
+.editor{
+	display:none
+}
+input{
+	border:none;
+	width:154px;
+	height:17px;
+	margin-top:0px;
+	text-align:center;
+	background-color:transparent
+}
+.setupTime{
+	float:left;
+	width:90px;
+	height:20px;
+	line-height:20px;
+	border:1px solid #c0c0c0
+}
+.status{
+	float:left;
+	width:120px;
+	line-height:20px;
+	height:20px;
+	border:1px solid #c0c0c0
+}
+.options{
+	float:left;
+	width:140px;
+	height:20px;
+	line-height:20px;
+	border:1px solid #c0c0c0
+}

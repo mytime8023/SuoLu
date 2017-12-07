@@ -1,0 +1,112 @@
+#layOut{
+	margin-right:10%;
+	margin-left:10%;
+	margin-top:30px;
+	width:80%;
+}
+#layOut #accountants{
+	float:left;
+	width:350px;
+	height:400px;
+}
+#layOut #companies{
+	margin-left:15%;
+	float:left;
+	width:350px;
+	height:400px;
+}
+#allotPanel{
+	float:left;
+	width:798px;
+	height:60px;
+}
+#allotPanel #left{
+	margin-top:25px;
+	float:left;
+	width:350px;
+	height:35px;
+	text-align:center
+}
+#center{
+	margin-top:25px;
+	float:left;
+	width:92px;
+	height:35px;
+	text-align:center
+}
+#conect{
+	width:90px;
+	height:35px;
+	text-align:center;
+	font-size:25px
+}
+#right{
+	margin-top:25px;
+	float:right;
+	width:350px;
+	height:35px;
+	text-align:center
+}
+#selectedAccountant{
+	width:250px;
+	height:29px;
+	text-align:center;
+	font-size:25px
+}
+#selectedCompany{
+	width:250px;
+	height:29px;
+	text-align:center;
+	font-size:25px
+}
+.selected{
+	background-color:#ffff80;
+}
+.head{
+	height:45px
+}
+.tbody{
+	height:355px;
+	overflow-y:auto;
+	overflow-x:hidden;
+}
+.inner{
+	width:auto;
+	height:100%;
+}
+.row{
+	width:auto;
+	height:20px;
+	border-top:1px solid #c0c0c0;
+	border-bottom:1px solid #c0c0c0;
+	border-right:1px solid #c0c0c0;
+	border-left:1px solid #c0c0c0;
+	cursor:pointer
+}
+.row:hover{
+	background-color:#ffff80;
+}
+.header{
+	width:auto;
+	height:20px;
+}
+.headerLeft{
+	width:176px;
+}
+.headerRight{
+	width:153px;
+}
+.cell{
+	height:20px;
+	float:left;
+	display:inline;
+	text-align:center;
+	line-height:20px;
+}
+.leftCell{
+	width:176px;
+	border-right:1px solid #c0c0c0;
+}
+.rightCell{
+	width:153px;
+}

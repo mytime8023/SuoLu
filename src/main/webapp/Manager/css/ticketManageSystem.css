@@ -1,0 +1,177 @@
+html,body{
+	width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+.tsContainer {
+    width: 97%;
+    height: 97%;
+    position: absolute;
+    top: 2%;
+    left: 2%;
+}
+.row{
+	width:100%;
+	height:auto;
+	text-align:center;
+}
+.row span {
+    font-size: 30px;
+    font-weight: bold;
+}
+.row .selector{
+    width: 300px;
+    float: left;
+	margin-left: 30px;
+}
+.row .selector .label {
+    width: 100px;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+}
+.row .selector .container {
+    width: 200px;
+    float: left;
+}
+.row .selector .container select {
+    width: 100%;
+    height: 30px;
+	text-indent: 10px;
+}
+.cell{
+	height: 75%;
+    float: left;
+    margin-top: 2%;
+}
+.table-cell {
+    height: 25px;
+    line-height: 25px;
+    float: left;
+	border-left: 1px solid gray;
+	font-size: 12px;
+	overflow: hidden;
+}
+.table-row {
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    border-right: 1px solid gray;
+}
+.table-head {
+    font-size: 15px;
+    text-align: center;
+}
+.code{
+	width: 10%;
+}
+.context{
+	width: 46.5%;
+}
+.time{
+	width: 19%;
+}
+.status{
+	width: 10%;
+}
+.opteration{
+	width: 13.3%;
+    text-align: center;
+}
+.opteration a{
+	text-decoration: none;
+}
+.table-body {
+    height: 90%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.table-body-row {
+	border-bottom: 1px solid gray;
+	border-right: 1px solid gray;
+	overflow: hidden;
+	cursor: pointer;
+}
+.table-body-row:hover{
+	background-color: #ffe48d;
+}
+.selected-row{
+	background-color: #ffe48d;
+}
+.record{
+	height: 50%;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+.read-reply{
+	height: 100%;
+}
+.record .text{
+	width: 90%;
+    height: 75%;
+    margin-top: 3%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.record .text textarea{
+	height: 87%;
+    width: 95%;
+    resize: none;
+    font-size: 13px;
+    padding: 10px;
+    outline-style: none;
+    border-radius: 5px;
+}
+.button {
+    text-align: center;
+    margin-top: 2%;
+}
+button {
+    width: 100px;
+    height: 30px;
+    font-size: 15px;
+    border-radius: 5px;
+    border-style: none;
+    background-color: #06bd4f;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    outline-style: none;
+}
+.reply {
+	width: 400px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 20px;
+}
+.reply .stamp{
+	width:95%;
+	height:20px;
+	margin-left:auto;
+	margin-right:auto;
+	font-size: 13px;
+}
+.reply .stamp .user{
+	width:40%;
+	height:20px;
+	float:left;
+}
+.reply .stamp .time{
+	width:60%;
+	height:20px;
+	float:right;
+}
+.reply .msg{
+	width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 13px;
+}
+.reply-ticket {
+	height: 100%;
+}
+.reply-input{
+	display:none;
+}

@@ -1,0 +1,161 @@
+#subjectTables{
+	width:1042px;
+	padding-top:5px;
+	border:1px solid blue;
+	margin:auto
+}
+span {
+	display: block;
+    margin-left: 26%;
+    font-size: 20px;
+    font-weight: bold;
+    width: 50%;
+    text-align: center;
+    overflow: hidden;
+}
+#thead{
+	background-color:#408080;
+	text-align:center;
+	color:white;
+	height:33px;
+	font-size:12%;
+}
+#thead .code{
+	float:left;
+	width:182px;
+	height:30px;
+	line-height:30px;
+	border:1px solid #ffffff
+}
+#thead .name{
+	float:left;
+	width:300px;
+	height:30px;
+	line-height:30px;
+	border:1px solid #ffffff
+}
+#thead .direction{
+	float:left;
+	width:68px;
+	height:30px;
+	line-height:30px;
+	border:1px solid #ffffff
+}
+#thead .data{
+	float:left;
+	width:9.13%;
+	height:30px;
+	line-height:30px;
+	border:1px solid #ffffff
+}
+#gridScroller{
+	width:1044px;
+	background-color:#ffff80;
+	height:430px;
+	overflow-y:auto;
+	overflow-x:hidden
+}
+.row{
+	text-align:center;
+	width:1046px
+}
+.subCode{
+	float:left;
+	width:182px;
+	height:23px;
+	line-height:23px;
+	text-align:left;
+	border:1px solid #c0c0c0
+}
+.subCode span{
+	font-size:10px;
+	margin-left:0px;
+	font-weight:normal
+}
+.subName{
+	float:left;
+	height:23px;
+	width:300px;
+	line-height:23px;
+	font-size:10px;
+	border:1px solid #c0c0c0
+}
+.subName span{
+	font-size:10px;
+	font-weight:normal;
+	margin-left:0px
+}
+.subDirection{
+	height:23px;
+	line-height:23px;
+	float:left;
+	width:68px;
+	font-size:10px;
+	border:1px solid #c0c0c0
+}
+.subData{
+	height:23px;
+	line-height:23px;
+	float:left;
+	width:9.13%;
+	text-align:center;
+	border:1px solid #c0c0c0
+}
+input{
+	text-align:center;
+	margin:auto;
+	font-size:15px;
+	height:16px;
+	width:100%;
+	background-color:transparent;
+	border:0px
+}
+#button{
+	margin-top:3px;
+	margin-right:30px;
+	float:right
+}
+.initBtns{
+	height:25px;
+	background-color:#408080;
+	border-radius:5px;
+	border:2px
+}
+.initBtns:hover{
+	cursor:pointer;
+	color:#ffffff;
+	background-color:#0080c0
+}
+.add {
+	display:none;
+    width: 15px;
+    height: 15px;
+    margin-top: 4px;
+    margin-right: 4px;
+    float: right;
+    background-image: url(../images/custom.png);
+    cursor: pointer;
+    background-position: -194px -252px;
+}
+.del {
+	display:none;
+    width: 15px;
+    height: 16px;
+    margin-top: 3px;
+    margin-left: 4px;
+    float: left;
+    background-image: url(../images/custom.png);
+    cursor: pointer;
+    background-position: -169px -1px;
+}
+.addUnit {
+	display:none;
+    width: 17px;
+    height: 17px;
+    margin-top: 3px;
+    margin-right: 4px;
+    float: right;
+    background-image: url(../images/icons.png);
+    cursor: pointer;
+    background-position: -320px -119px;
+}

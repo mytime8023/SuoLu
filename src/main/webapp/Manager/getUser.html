@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>客户信息</title>
+	<link rel="stylesheet" type="text/css" href="themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="themes/icon.css">
+	<script type="text/javascript" src="scripts/jquery.min.js"></script>
+	<script type="text/javascript" src="scripts/jquery.easyui.min.js"></script>
+	 <script type="text/javascript" charset="utf-8" src="../scripts/tools/paisuanTools.js"></script>
+	<script type="text/javascript" charset="utf-8" src="../scripts/layer/layer.js" ></script>
+	<script type="text/javascript" src="scripts/accountAll.js"></script>
+</head>
+ <body>
+ <script type="text/javascript">
+  	/* function barCode(value, rows, index) {
+  		if (rows.yclrk_barcode_iscreate == '否') {
+  			return "<a href='javascript:yclrkCreateBarCode("+rows.yclrk_no+")'>查看 </a>";
+  		} else {
+  			return "<a href='javascript:yclrkShowBarCode("+rows.yclrk_no+")'>整理</a>"
+  		}
+  	} */
+  </script>
+  <table id="dx_accountant" class="easyui-datagrid" data-options="title:'系统管理 > 会计管理',fit:true,toolbar:'#toolbar',fitColumns:true,rownumbers:true,pagination:true,pageSize:10,url:'../getAllAccountant'">
+  	<thead>
+  		<tr>
+  			<th data-options="field:'ck',width:100,checkbox:true"></th>
+			<th data-options="field:'id',width:100">会计编号</th>
+			<th data-options="field:'identityName',width:100">姓名</th>
+			<th data-options="field:'email',width:100">身份证信息</th>
+			<th data-options="field:'status',width:100">会计昵称</th>
+			<th data-options="field:'email',width:100">账户</th>
+			<th data-options="field:'email',width:100">邮箱</th>
+			<th data-options="field:'email',width:100">服务数量(以服务/最多服务)</th>
+			<th data-options="field:'email',width:100">现场还是网络</th>
+			<th data-options="field:'email',width:100">注册时间</th>
+			<th data-options="field:'identityCard',width:100">手机号</th>
+		<!-- 	<th data-options="field:'operation',width:20,formatter:barCode">操作</th> -->
+  		</tr>
+  	</thead>
+  </table>
+  <div id="toolbar">
+		<a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="getName()">查询 </a><input id="input_id"/>
+		<a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editUser()">修改员工信息</a>
+		<a href="#" class="easyui-linkbutton" iconCls="icon-cancel" plain="true" onclick="removeUser()">删除员工</a>
+	</div>
+ </body>
+	</html>

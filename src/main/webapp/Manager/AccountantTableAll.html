@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>会计信息</title> 
+	<!-- <script type="text/javascript" src="scripts/accountTableAll.js"></script>
+	<link rel="stylesheet" type="text/css" href="themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="themes/icon.css">
+	<script type="text/javascript" src="scripts/jquery.min.js"></script>
+	<script type="text/javascript" src="scripts/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="scripts/accountAll.js"></script>
+	 <script type="text/javascript" charset="utf-8" src="../scripts/tools/paisuanTools.js"></script>
+	<script type="text/javascript" charset="utf-8" src="../scripts/layer/layer.js" ></script> -->
+	<link rel="stylesheet" type="text/css" href="themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="themes/icon.css">
+	<script type="text/javascript" src="scripts/jquery.min.js"></script>
+	<script type="text/javascript" src="scripts/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="scripts/accountTableAll.js"></script>
+<!-- 	<link rel="stylesheet" type="text/css" href="themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="themes/icon.css">
+	<script type="text/javascript" src="scripts/jquery.min.js"></script>
+	<script type="text/javascript" src="scripts/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="scripts/accountAll.js"></script> -->
+	 <script type="text/javascript" charset="utf-8" src="../scripts/tools/paisuanTools.js"></script>
+	<script type="text/javascript" charset="utf-8" src="../scripts/layer/layer.js" ></script>
+</head>
+<body>
+<script type="text/javascript">
+ // 公司类型 ，"0"表示小规模纳税人，"1"表示一般纳税人
+  //false 线下公司；true 线上公司
+  	  function barCode(value, rows, index) {
+  		if (rows.type == '0') {
+  			return "小规模纳税人";
+  		} 
+  		if (rows.type == '1') {
+  			return "一般纳税人";
+  		} 
+  		else {
+  			return "网络问题";
+  		} 
+  	}
+ 	function barCode1(value,rows,index){
+ 		 if(rows.online){
+ 			return "线下公司"
+ 		}
+  		else {
+  			return "线上公司";
+  		} 
+ 		
+ 	} 
+  </script>
+  <table id="dx_accountant">
+  	
+  	
+  </table>
+  <div id="toolbar">
+		<a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="getType()">查询 </a><input id="input_id"/> 
+
+	</div>
+ </body>
+  <script type="text/javascript">
+  	 function barCode(value, rows, index) {
+  		if (rows.type == '1') {
+  			return "现场会计";
+  		} else {
+  			return "网络会计";
+  		}
+  	}
+  	/* 0:未审核；1：审核中；2:审核通过；3：审核未通过；4：补充审核中；5补充审核未通过 */
+  	 function barCode2(value,rows,index){
+  		 if(rows.status=='5'){
+  			return "补充审核未通过";
+  		 }
+  		 if(rows.status=='4'){
+   			return "补充审核中";
+   		 }
+  		 if(rows.status=='3'){
+   			return "审核未通过";
+   		 } 
+  		 if(rows.status=='2'){
+  			return "审核通过";
+  		 }
+  		 if(rows.status=='1'){
+   			return "审核中";
+   		 }
+  		 if(rows.status=='0'){
+    		return "未审核";
+    		 } 
+  		 
+  	 }
+  	 
+  	 function barCode1(value,rows,index){
+  			return "<a href='#' onclick='getCurrentAccountant1("+rows.id+")'>审阅</a>"; 
+  			console.log("haha"+rows.id);
+  	}
+  		 
+  </script>
+</html>

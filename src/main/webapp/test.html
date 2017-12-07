@@ -1,0 +1,96 @@
+<html xmlns="http://www.w3.org/1999/xhtml">  
+<head>  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+<title>综合信息管理系统 行政管理 安全检查  归档信息 列表</title>  
+<link href="../../resources/css/stlye.css" rel="stylesheet" type="text/css" />  
+<style type="text/css">  
+body {  
+    margin-top: 10px;  
+    margin-bottom: 5px;  
+    margin-left: 5px;  
+    margin-right: 5px;  
+}  
+</style>  
+<body>  
+<table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">  
+  <tr>  
+    <td height="30" align="left" class="zibold13">当前位置：行政管理 >> 安全检查 >> <a href="aqGuidang.html">归档信息</a> >> 列表</td>  
+  </tr>  
+</table>  
+<table width="90%" align="center" border="0" cellpadding="0" cellspacing="0" class="neikuangtop">  
+  <tr>  
+    <td width="7%" height="30" align="right" class="left_line">时间：</td>  
+    <td width="15%" align="left"><input name="textfield" type="text" value="2006-09-18" size="15" height="16"></td>  
+    <td width="3%" align="right">至</td>  
+    <td width="55%" align="left"><input name="textfield2" type="text" value="2007-09-20" size="15" height="16" /></td>  
+    <td width="10%" align="right" style="padding-right:10px;"><input type="button" name="Submit" value="查询" onclick="javascript:location.href='#';" /></td>  
+    <td width="10%" align="left" style="padding-left:10px;"><input type="button" name="Submit3" value="查询统计" onclick="javascript:location.href='aqJiancha_Search.html';" /></td>  
+  </tr>  
+</table>  
+<table id="table1" width="90%" border="0" align="center" cellpadding="0" cellspacing="0" class="waikuang">  
+  <tr>  
+    <td width="6%" height="27" align="center" class="neikuangbold">序号</td>  
+    <td width="10%" align="center" class="neikuangbold">时间</td>  
+    <td width="20%" align="center" class="neikuangbold">单位</td>  
+    <td width="18%" align="center" class="neikuangbold">项目</td>  
+    <td width="10%" align="center" class="neikuangbold">结果等级</td>  
+    <td width="10%" align="center" class="neikuangbold">检查机关</td>  
+    <td width="8%" align="center" class="neikuangbold">记录人</td>  
+    <td width="12%" align="center" class="neikuangbold">记录时间</td>  
+    <td width="6%" align="center" class="neikuangbold">查看</td>  
+  </tr>  
+  <tr>  
+    <td height="21" align="center" class="neikuang">1</td>  
+    <td align="center" class="neikuang">1980-02-02</td>  
+    <td align="center" class="neikuang">武警总队</td>  
+    <td align="center" class="neikuang">安全用电检查</td>  
+    <td align="center" class="neikuang">2222222</td>  
+    <td align="center" class="neikuang">总部</td>  
+    <td align="center" class="neikuang">主席</td>  
+    <td align="center" class="neikuang">1980-02-02</td>  
+    <td align="center" class="neikuang"><a href="aqChakanShow.html">查看</a></td>  
+  </tr>  
+  <tr>  
+    <td height="21" align="center" class="neikuang">2</td>  
+    <td align="center" class="neikuang">1980-02-02</td>  
+    <td align="center" class="neikuang">武警总队</td>  
+    <td align="center" class="neikuang">安全用电检查</td>  
+    <td align="center" class="neikuang">2222222</td>  
+    <td align="center" class="neikuang">总部</td>  
+    <td align="center" class="neikuang">总理</td>  
+    <td align="center" class="neikuang">1980-02-02</td>  
+    <td align="center" class="neikuang"><a href="aqChakanShow.html">查看</a></td>  
+  </tr>  
+  </table>  
+<table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">  
+  <tr>  
+    <td height="25" align="right">首页 | 上一页 | 下一页 | 尾页</td>  
+  </tr>  
+</table>  
+<table width="90%" align="center" border="0" cellpadding="0" cellspacing="0">  
+  <tr>  
+    <td width="50%" height="30" align="right" valign="bottom" style="padding-right:10px;"><input type="submit" name="Submit2" onclick="preview()" value="打印当前页" class="waikuang" ></td>  
+    <td width="50%" align="left" valign="bottom" style="padding-left:10px;"><input type="submit" name="Submit22" value="打印所有页"></td>  
+  </tr>  
+</table>  
+</body>  
+  <script language=javascript>  
+function preview() {   
+window.clipboardData.setData("Text",document.all('table1').outerHTML);  
+try  
+{  
+var ExApp = new ActiveXObject("Excel.Application")  
+var ExWBk = ExApp.workbooks.add()  
+var ExWSh = ExWBk.worksheets(1)  
+ExApp.DisplayAlerts = false  
+ExApp.visible = true  
+}    
+catch(e)  
+{  
+alert("您的电脑没有安装Microsoft Excel软件！")  
+return false  
+}   
+ ExWBk.worksheets(1).Paste;   
+ }  
+</script> 
+</html>  

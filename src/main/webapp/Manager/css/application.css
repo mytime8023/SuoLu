@@ -1,0 +1,45 @@
+.container {
+    width: 500px;
+    height: 350px;
+    padding-top: 1px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+.pannel {
+    width: 240px;
+    height: 330px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    padding-top: 1px;
+}
+.row {
+    height: 40px;
+    line-height: 40px;
+    margin-top: 15px;
+}
+.row input {
+    width: 125px;
+}
+.row select {
+    width: 125px;
+    height: 20px;
+    font-size: 15px;
+}
+.row button {
+	width: 128px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    outline-style: none;
+    background-color: #5a8fe9;
+    color: white;
+    cursor: pointer;
+}
+button:hover{
+	background-color: #0067ce;
+}
+.hiddenField{
+	display:none;
+}

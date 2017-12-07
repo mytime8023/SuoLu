@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+<title>会计信息</title>
+	  <link rel="stylesheet" type="text/css" href="css/accountantTable.css">
+	<script type="text/javascript" src="scripts/jquery.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="../scripts/tools/paisuanTools.js"></script>
+	<script type="text/javascript" charset="utf-8" src="../scripts/layer/layer.js" ></script>
+	<script type="text/javascript" src="scripts/accountTable.js"></script>
+	 <script type="text/javascript" src="scripts/UserInfo.js"></script> 
+	<link rel="stylesheet" type="text/css" href="themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="themes/icon.css">
+	<script type="text/javascript" src="scripts/jquery.min.js"></script>
+	<script type="text/javascript" src="scripts/jquery.easyui.min.js"></script>
+	<!-- <script type="text/javascript" src="scripts/accountAll.js"></script> -->
+	 <script type="text/javascript" charset="utf-8" src="../scripts/tools/paisuanTools.js"></script>
+	<script type="text/javascript" charset="utf-8" src="../scripts/layer/layer.js" ></script>
+</head>
+<body>
+
+  <table id="dx_accountant" class="easyui-datagrid" data-options="title:'系统管理 > 会计管理',fit:true,toolbar:'#toolbar',fitColumns:true,rownumbers:true,pagination:true,pageSize:10">
+  	<thead>
+  		<tr>
+  			<th data-options="field:'ck',width:100,checkbox:true"></th>
+			<th data-options="field:'id',width:100">会计编号</th>
+			<th data-options="field:'identityName',width:100">姓名</th>
+			<th data-options="field:'identityCard',width:150">身份证信息</th>
+			<th data-options="field:'companyCounter',width:100">已服务公司</th>
+			<!-- <th data-options="field:'ranking',width:100">会计等级</th> -->
+			<th data-options="field:'email',width:100">邮箱</th>
+			<th data-options="field:'maxCompanyNumber',width:100">(最多服务公司)</th>
+			<th data-options="field:'type',width:100,formatter:barCode">现场还是网络</th>
+			<th data-options="field:'email',width:100">注册时间</th>
+			<th data-options="field:'status',width:100,formatter:barCode2">状态</th>
+			<th data-options="field:'operation',width:100,formatter:barCode1">操作</th>
+		<!-- 	<th data-options="field:'operation',width:20,formatter:barCode">操作</th> -->
+  		</tr>
+  	</thead>
+  </table>
+  <div id="toolbar">
+		<a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="getName()">查询 </a><input id="input_id"/> 
+
+	</div>
+ </body>
+  <script type="text/javascript">
+  	 function barCode(value, rows, index) {
+  		if (rows.type == '1') {
+  			return "现场会计";
+  		} else {
+  			return "网络会计";
+  		}
+  	}
+  	/* 0:未审核；1：审核中；2:审核通过；3：审核未通过；4：补充审核中；5补充审核未通过 */
+  	 function barCode2(value,rows,index){
+  		 if(rows.status=='5'){
+  			return "补充审核未通过";
+  		 }
+  		 if(rows.status=='4'){
+   			return "补充审核中";
+   		 }
+  		 if(rows.status=='3'){
+   			return "审核未通过";
+   		 } 
+  		 if(rows.status=='2'){
+  			return "审核通过";
+  		 }
+  		 if(rows.status=='1'){
+   			return "审核中";
+   		 }
+  		 if(rows.status=='0'){
+    		return "未审核";
+    		 } 
+  		 
+  	 }
+  	 
+  	 function barCode1(value,rows,index){
+  			return "<a href='#' onclick='getCurrentAccountant1("+rows.id+")'>审阅</a>"; 
+  			console.log("haha"+rows.id);
+  	}
+  		 
+  </script>
+</html>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.suolu.dao.ShouKuanDao"> 
+<select id="getShoukuan" resultType="java.util.Map"  >
+     select * from shoukuanqueren
+      
+ </select>
+ <select id="getKeHush" resultType="java.util.Map"  >
+     select * from kehushouhuo
+      
+ </select>
+ <select id="getFenYe" resultType="java.util.Map" parameterType="Integer" >
+     select * from shoukuanqueren limit #{fenye},5
+ </select>
+ <select id="getTuiHuo" resultType="java.util.Map" parameterType="Integer" >
+     select * from  tuihuoguanli limit #{fenye},5
+ </select>
+ 
+  <select id="getTimecx" resultType="java.util.Map" parameterType="java.util.Map" >
+     select * from  tuihuoguanli where tuihuoshijian between #{aa} and #{cc}
+ </select>
+ 
+ 
+ <select id="getShouji" resultType="java.util.Map" parameterType="java.util.Map">
+     select * from shoukuanqueren where shoujihao like '%${shouji}%' limit 0,5
+      
+ </select>
+ 
+ <select id="getWeiZhiFu" resultType="java.util.Map" parameterType="integer">
+     select * from shoukuanqueren where fukuanzhuantai=#{fenye} limit 0,5
+      
+ </select>
+ 
+  <select id="editTuiHuo" resultType="java.util.Map" parameterType="Integer">
+     select * from tuihuoguanli,goods where user_id =#{user_id} and goods_id=#{user_id} 
+      
+ </select>
+ 	
+ <update id="addBianJi" parameterType="java.util.Map" >
+ 	update tuihuoguanli set jdjg=#{user_id} where tuihuodanhao=#{thdh}
+ </update>
+ 
+ <select id="getTime" resultType="java.util.Map" parameterType="String">
+     select * from shoukuanqueren where fukuanshijian=#{time}
+      
+ </select>
+ <insert id="addJ1"  parameterType="java.util.Map">
+ 
+ 	insert into shoukuanqueren (xianlu,name,shoujihao,xiandanshijian,yingshoukuan,fukuanshijian,fukuanzhuantai,caozuo) VALUES (#{fahuoshiqi},#{kehuname},#{shoujihao},#{yingshoukuan},#{xiandanshijian},#{shoukuanshijian},1,1)
+ 
+ </insert>
+ 
+ <insert id="addShuJu1"  parameterType="java.util.Map">
+ 
+ 	insert into goods (goods_name,feilei_id, supplier_id,original_price,mnemonic_code,goods_order,goods_unit,min_order_amount,goods_scale,stock_price,onlybuy_amount,up_down_shelf,common_price,silver_price,gold_price,purchase_stock,rest_amount,unit_Convert,goods_code,on_sale_status,description) VALUES (#{kehuname},2,2,#{original_price},#{mnemonic_code},#{goods_order},#{goods_unit},#{min_order_amount},#{goods_scale},#{stock_price},#{onlybuy_amount},#{up_down_shelf},#{common_price},#{silver_price},#{gold_price},#{purchase_stock},#{rest_amount},#{unit_Convert},#{goods_code},#{on_sale_status},#{description})
+ 
+ </insert>
+ <update id="setShuJu" parameterType="Integer" >
+ 
+  update shoukuanqueren set  fukuanzhuantai=1 where dd_id=#{setShu}
+ 
+ </update>
+<select id="getCaiWu" resultType="java.util.Map"  parameterType="java.util.Map">
+     select * from shoukuanqueren 
+     <where>
+			<if test="haha != null and haha.length()!=0">
+				and xianlu= #{haha} limit 0,5
+			</if>
+			<if test="time !=null and time.length()!=0">
+				and fukuanshijian=#{time} 
+			</if>
+			<if test="shouji != null and shouji.length()!=0">
+				and shoujihao like '%${shouji}%' limit 0,5
+			</if>
+		</where>
+ </select>
+ <delete id="delDingDan" parameterType="Integer" >
+ delete from tuihuoguanli where user_id=#{user_id}
+ 
+ </delete>
+ 
+ </mapper>

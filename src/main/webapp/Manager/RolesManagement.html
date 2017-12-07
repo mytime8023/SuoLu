@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>角色管理</title>
+	<link rel="stylesheet" type="text/css" href="themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="themes/icon.css">
+	<script type="text/javascript" src="scripts/jquery.min.js"></script>
+	<script type="text/javascript" src="scripts/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="scripts/aboutShiro.js"></script>
+	
+</head>
+<body>
+	<table id="RoleDg" title="角色管理" class="easyui-datagrid" style="width:100%;height:666px"
+		url="getRoles" method="GET" toolbar="#toolbar" pagination="true" rownumbers="true" fitColumns="true" singleSelect="true">
+		<thead>
+			<tr>
+				<th field="id" width="8%">角色编号</th>
+				<th field="name" width="20%">角色标识</th>
+				<th field="resourceIds" width="20%">拥有的权限</th>
+				<th field="yxbz" width="8%">有效标志</th>
+				<th field="description" width="44%">角色描述</th>
+			</tr>
+		</thead>
+	</table>
+	<div id="toolbar">
+		<a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="createRole()">新增角色</a>
+		<a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="updateRole()">修改角色</a>
+		<a href="#" class="easyui-linkbutton" iconCls="icon-cancel" plain="true" onclick="deleteRole()">删除角色</a>
+	</div>
+
+	<div id="dlg" class="easyui-dialog" style="width:262px;height:350px;padding:10px 20px"
+			closed="true" buttons="#dlg-buttons">
+		<div class="ftitle">角色信息</div>
+			<form id="fm" method="post" novalidate>
+				<input onfocus="this.select()" id="id" name="id" type="hidden" class="easyui-validatebox"/>
+				<div class="fitem">
+					<label>角色标识:</label>
+					<input onfocus="this.select()" id="name" name="name" class="easyui-validatebox" required="true"/>
+				</div>
+				<div class="fitem">
+					<label>拥有的权限:</label>
+					<input onfocus="this.select()" id="resourceIds" name="resourceIds" class="easyui-validatebox" required="true"/>
+				</div>
+				<div class="fitem">
+					<label>有效标志:</label>
+					<input onfocus="this.select()" id="yxbz" name="yxbz" class="easyui-validatebox" required="true"/>
+				</div>
+				<div class="fitem">
+					<label>角色描述:</label>
+					<textarea onfocus="this.select()" id="description" name="description" style="overflow:auto"></textarea>
+				</div>
+			</form>
+		</div>
+	<div id="dlg-buttons">
+		<a href="#" class="easyui-linkbutton" iconCls="icon-ok" onclick="saveRole()">保存</a>
+		<a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')">取消</a>
+	</div>
+</body>
+
+<style type="text/css">
+		#fm{
+			margin:0;
+			padding:10px 30px;
+		}
+		.ftitle{
+			font-size:14px;
+			font-weight:bold;
+			color:#666;
+			padding:5px 0;
+			margin-bottom:10px;
+			border-bottom:1px solid #ccc;
+		}
+		.fitem{
+			margin-bottom:5px;
+		}
+		.fitem label{
+			display:inline-block;
+			width:80px;
+		}
+	</style>
+	</html>

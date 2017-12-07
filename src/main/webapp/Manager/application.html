@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="renderer" content="webkit">
+		<title>应用管理</title>
+		<link rel="stylesheet" type="text/css" href="css/application.css">
+		<script type="text/javascript" src="scripts/jquery.min.js"></script>
+		<script type="text/javascript" src="scripts/application.js"></script>
+		<script type="text/javascript" src="../scripts/layer/layer.js"></script>
+		<script type="text/javascript" src="../scripts/tools/paisuanTools.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="pannel">
+				<div class="row">
+					<span>运行平台：</span>
+					<select id="platform">
+						<option></option>
+						<option value="0">安卓端</option>
+						<option value="1">苹果端</option>
+					</select>
+				</div>
+				<div class="row">
+					<span>软件类型：</span>
+					<select id="appType">
+						<option></option>
+						<option value="0">会计端</option>
+						<option value="1">客户端</option>
+						<option value="2">管理端</option>
+					</select>
+				</div>
+				<div class="row">
+					<span>版本名称：</span>
+					<input id="version_name">
+				</div>
+				<div class="row">
+					<span>版本编码：</span>
+					<input id="version_code">
+				</div>
+				<div class="row">
+					<span>我的应用：</span>
+					<button id="selector" option="1">选择文件</button>
+				</div>
+			</div>
+		</div>
+		<div class="hiddenField">
+			<iframe id="dialog" name="blankFrame"></iframe>
+			<form target="blankFrame" id="uploadPanel" method="post" enctype="multipart/form-data">
+				<input type="file" id="fileTrigger" name="apps">
+				<input type="submit" id="submit" name="submit">
+			</form>
+		</div>
+	</body>
+</html>

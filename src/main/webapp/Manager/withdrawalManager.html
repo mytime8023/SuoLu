@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="css/ticketManageSystem.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+	<div class="tsContainer">
+		<div class="row"><span>会计提现申请处理</span></div>
+		<!-- 
+		<div class="row" style="margin-top:20px">
+			<div class="selector">
+				<div class="label">问题大类：</div>
+				<div class="container">
+					<select id="1"></select>
+				</div>
+			</div>
+			<div class="selector">
+				<div class="label">问题中类：</div>
+				<div class="container">
+					<select id="2"></select>
+				</div>
+			</div>
+			<div class="selector">
+				<div class="label">问题小类：</div>
+				<div class="container">
+					<select id="3"></select>
+				</div>
+			</div>
+			<div style="clear:both"></div>
+		</div> 
+		-->
+		<div class="cell" style="width:100%">
+			<div class="table" style="height:100%">
+				<div class="table-head">
+					<div class="table-row">
+						<div style="width:5%" class="table-cell id">申请编号</div>
+						<div style="width:5%" class="table-cell amount">提现金额（元）</div>
+						<div style="width:10%" class="table-cell accountant">会计名称</div>
+						<div style="width:20%" class="table-cell company">公司名称</div>
+						<div style="width:20%" class="table-cell message">备注信息</div>
+						<div style="width:10%" class="table-cell submitTime">申请时间</div>
+						<div style="width:5%" class="table-cell status">申请状态</div>
+						<div style="width:10%" class="table-cell payTime">处理时间</div>
+						<div style="width:5%" class="table-cell paid">处理状态</div>
+						<div style="width:5%" class="table-cell opteration">操作</div>
+						<div style="clear:both"></div>
+					</div>
+				</div>
+				<div class="table-body"></div>
+				<div id="reporsitory" style="display:none;">
+					<div class="table-body-row" style="width: 100%;text-align: center;cursor: default;">
+						<div style="width:5%" class="table-cell id"></div>
+						<div style="width:5%" class="table-cell amount"></div>
+						<div style="width:10%" class="table-cell accountant"></div>
+						<div style="width:20%" class="table-cell company"></div>
+						<div style="width:20%" class="table-cell message"></div>
+						<div style="width:10%" class="table-cell submitTime"></div>
+						<div style="width:5%" class="table-cell status"></div>
+						<div style="width:10%" class="table-cell payTime"></div>
+						<div style="width:5%" class="table-cell paid"></div>
+						<div style="width:5%" class="table-cell opteration"><a href="javascript:void(0)">完成</a></div>
+						<div style="clear:both"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div style="clear:both"></div>
+	</div>
+	<div id="source" style="display:none">
+		<script type="text/javascript" src="../scripts/jquery.min.js"></script>
+		<script type="text/javascript" src="../scripts/tools/paisuanTools.js" ></script>
+		<script type="text/javascript" src="../scripts/layer/layer.js" ></script>
+		<script type="text/javascript" src="scripts/withdrawalManager.js?4234255"></script>
+	</div>
+</body>
+</html>

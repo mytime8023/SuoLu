@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="css/ticketClassManager.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+	<div class="tsContainer">
+		<div class="row"><div class="title">问题类别管理系统</div></div>
+		<div class="row">
+			<div class="cell" id="topClass">
+				<div class="buttons">
+					<button class="addType">增加大类</button>
+					<button class="deleteType">删除大类</button>
+				</div>
+				<div class="inner"></div>
+			</div>
+			<div class="cell" id="middleClass">
+				<div class="buttons">
+					<button class="addType">增加中类</button>
+					<button class="deleteType">删除中类</button>
+				</div>
+				<div class="inner"></div>
+			</div>
+			<div class="cell" id="primaryClass">
+				<div class="buttons">
+					<button class="addType">增加小类</button>
+					<button class="deleteType">删除小类</button>
+				</div>
+				<div class="inner"></div>
+			</div>
+			<div style="clear:both"></div>
+		</div>
+	</div>
+	<div id="repository" style="display:none">
+		<div class="item">
+			<div class="context">
+				<span></span>
+				<input>
+			</div>
+			<div class="delete"><img src="images/delete.ico"/></div>
+			<div style="clear:both"></div>
+		</div>
+		<div class="dialog">
+			<div class="dialogRow">
+				<div class="cell left">类型名称：</div>
+				<div class="cell right"><input></div>
+				<div style="clear:both"></div>
+			</div>
+			<div class="dialogRow" style="margin-top:20px">
+				<div class="cell left">类型描述：</div>
+				<div class="cell right"><textarea></textarea></div>
+				<div style="clear:both"></div>
+			</div>
+		</div>
+	</div>
+	<div id="source" style="display:none">
+		<script type="text/javascript" src="../scripts/jquery.min.js"></script>
+		<script type="text/javascript" src="../scripts/tools/paisuanTools.js" ></script>
+		<script type="text/javascript" src="../scripts/layer/layer.js" ></script>
+		<script type="text/javascript" src="scripts/ticketClassManager.js"></script>
+	</div>
+</body>
+</html>

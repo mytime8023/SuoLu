@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>手动会计分配</title>
+<script type="text/javascript" src="scripts/jquery.min.js"></script>
+</head>
+<body>
+
+	<form>
+		会计师账号:<input id="accountant" type="text" name="name" value="13550228161"/>
+		公司名:<input id="company" type="text" name="name" value="lly"/>
+		<input type="button" value="确定" onclick="allot_accountant()"/>
+	</form>	
+
+</body>
+<script type="text/javascript">
+	function allot_accountant(){
+		var Aname=$("#accountant").val();
+		var Cname=$("#company").val();
+		var jsonobj={
+				accountant_name:Aname,
+				company_name:Cname
+				}
+		var json_obj=JSON.stringify(jsonobj);
+		alert(json_obj);
+		$.ajax({
+			type:'POST',
+			url:'allotaccountant',
+			contentType:'application/json',
+	        datatype:'json',
+	        data:json_obj,
+	        async:false,
+	        success:function(server){
+	        	
+	        	alert("hello");
+	       	}
+		
+		});
+		
+		
+	}
+</script>
+</html>

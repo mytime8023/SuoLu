@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../accountant/CSS/card.commons.css">
+<link rel="stylesheet" type="text/css" href="../accountant/CSS/card.ui.min.css">
+<link rel="stylesheet" type="text/css" href="../css/app.css">
+<script type="text/javascript" src="scripts/jquery.min.js"></script>
+<script type="text/javascript" src="scripts/jquery.easyui.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="../scripts/tools/paisuanTools.js"></script>
+<script type="text/javascript" charset="utf-8" src="../scripts/layer/layer.js" ></script>
+<script type="text/javascript" src="scripts/cardList.js"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="mod-toolbar-top">
+			<div class="left">
+				<strong class="txt fl" style="font-size: 25px">固定资产卡片</strong>
+				<a id="refresh" class="ui-btn ui-btn-sp fl">刷新</a>
+			</div>
+			<div class="right">
+				<a id="add" class="ui-btn ui-btn-sp fl">新增</a>
+				<a id="update" class="ui-btn ui-btn-sp fl">修改</a>
+				<a id="delete" class="ui-btn ui-btn-sp fl">删除</a> 
+			</div>
+		</div>
+		<div class="main-wrap cl">
+			<div class="col-main">
+				<div id="dataGrid" class="autoGrid grid-wrap" style="padding-right: 18px">
+					<div class="ui-jqgrid ui-widget ui-widget-content ui-corner-all"
+						id="gbox_grid" dir="ltr" style="width: 100%;">
+						<div class="ui-jqgrid-view" id="gview_grid" style="width: 100%;">
+							<div class="ui-state-default ui-jqgrid-hdiv"
+								style="width: 100%;">
+								<div class="ui-jqgrid-hbox" style="padding-right: 0px">
+									<table class="ui-jqgrid-htable" style="width: 100%"
+										role="grid" aria-labelledby="gbox_grid" cellspacing="0"
+										cellpadding="0" border="0">
+										<thead>
+											<tr class="ui-jqgrid-labels" role="rowheader">
+												<th id="grid_number" role="columnheader" 
+													class="ui-state-default ui-th-column ui-th-ltr" style="width: 5%;">
+													<div id="jqgh_grid_number" class="ui-jqgrid-sortable">
+														编码
+													</div>
+												</th>
+												<th id="grid_name" role="columnheader"
+													class="ui-state-default ui-th-column ui-th-ltr" style="width: 7%;">
+													<div id="jqgh_grid_name" class="ui-jqgrid-sortable">
+														名称
+													</div>
+												</th>
+												<th id="grid_count" role="columnheader"
+													class="ui-state-default ui-th-column ui-th-ltr" style="width: 7%;">
+													<div id="jqgh_grid_count" class="ui-jqgrid-sortable">
+														数量
+													</div>
+												</th>
+												<th id="grid_typeName" role="columnheader"
+													class="ui-state-default ui-th-column ui-th-ltr" style="width: 8%;">
+													<div id="jqgh_grid_typeName" class="ui-jqgrid-sortable">
+														类别
+													</div>
+												</th>
+												<th id="grid_departmentName" role="columnheader"
+													class="ui-state-default ui-th-column ui-th-ltr" style="width: 6%;">
+													<div id="jqgh_grid_departmentName" class="ui-jqgrid-sortable">
+														部门
+													</div>
+												</th>
+												<th id="grid_orgval" role="columnheader"
+													class="ui-state-default ui-th-column ui-th-ltr" style="width: 6%;">
+													<div id="jqgh_grid_orgval" class="ui-jqgrid-sortable">
+														原值
+													</div>
+												</th>
+												<th id="grid_orgval" role="columnheader"
+													class="ui-state-default ui-th-column ui-th-ltr" style="width: 6%;">
+													<div id="jqgh_grid_ljzj" class="ui-jqgrid-sortable">
+														累计折旧
+													</div>
+												</th>
+												<th id="grid_orgval" role="columnheader"
+													class="ui-state-default ui-th-column ui-th-ltr" style="width: 6%;">
+													<div id="jqgh_grid_jz" class="ui-jqgrid-sortable">
+														净值
+													</div>
+												</th>
+												<th id="grid_perdepreciation" role="columnheader"
+													class="ui-state-default ui-th-column ui-th-ltr" style="width: 6%;">
+													<div id="jqgh_grid_perdepreciation" class="ui-jqgrid-sortable">
+														月折旧
+													</div>
+												</th>
+												<th id="grid_lifeperiods" role="columnheader"
+													class="ui-state-default ui-th-column ui-th-ltr" style="width: 9%;">
+													<div id="jqgh_grid_lifeperiods" class="ui-jqgrid-sortable">
+														预计使用期限
+													</div>
+												</th>
+												<th id="grid_goneperiods" role="columnheader"
+													class="ui-state-default ui-th-column ui-th-ltr" style="width: 8%;">
+													<div id="jqgh_grid_goneperiods" class="ui-jqgrid-sortable">
+														已使用期限
+													</div>
+												</th>
+												<th id="grid_salvagerate" role="columnheader"
+													class="ui-state-default ui-th-column ui-th-ltr" style="width: 6%;">
+													<div id="jqgh_grid_salvagerate" class="ui-jqgrid-sortable">
+														残值率%
+													</div>
+												</th>
+												<th id="grid_deprmethod" role="columnheader"
+													class="ui-state-default ui-th-column ui-th-ltr" style="width: 7%;">
+													<div id="jqgh_grid_deprmethod" class="ui-jqgrid-sortable">
+														折旧方法
+													</div>
+												</th>
+												<th id="grid_state" role="columnheader"
+													class="ui-state-default ui-th-column ui-th-ltr" style="width: 6%;">
+													<div id="jqgh_grid_state" class="ui-jqgrid-sortable">
+														状态
+													</div>
+												</th>
+												<th id="grid_clearperoid" role="columnheader"
+													class="ui-state-default ui-th-column ui-th-ltr" style="width: 7%;">
+													<div id="jqgh_grid_clearperoid" class="ui-jqgrid-sortable">
+														清理期间
+													</div>
+												</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+							</div>
+							<div class="ui-jqgrid-bdiv" style="height: 100%; width: 100%">
+								<div style="position: relative;">
+									<table  tabindex="0" cellspacing="0" cellpadding="0"
+										border="0" role="grid" aria-multiselectable="true"
+										aria-labelledby="gbox_grid" class="ui-jqgrid-btable ui-state-highlight"
+										style="width: 100%;">
+										<tbody id="card_tbody">
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

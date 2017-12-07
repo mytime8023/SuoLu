@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>公司信息</title>
+	<link rel="stylesheet" type="text/css" href="themes/default/easyui.css" id="swicth-style">
+	<link rel="stylesheet" type="text/css" href="css/companyTable.css">
+	<script type="text/javascript" charset="utf-8" src="scripts/jquery.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="scripts/companyTable.js"></script>
+	<script type="text/javascript" charset="utf-8" src="../scripts/tools/paisuanTools.js"></script>
+	<script type="text/javascript" charset="utf-8" src="../scripts/layer/layer.js" ></script>
+</head>
+<body>
+	<div id="comTables">
+		<div id="innerFrame">
+			<div class="head">
+				<div class="customer">客户名</div>
+				<div class="company">公司全称</div>
+				<div class="shortName">公司简称</div>
+				<div class="setupTime">创建日期</div>
+				<div class="status">公司状态</div>
+				<div class="options">管理操作</div>
+				<div style="clear:both"></div>
+			</div>
+			<div class="tableBody">
+				<div class="row">
+					<div class="customer"></div>
+					<div class="company"></div>
+					<div class="shortName"></div>
+					<div class="shortName editor">
+						<input type="text" maxlength="20"/>
+					</div>
+					<div class="setupTime"></div>
+					<div class="status"></div>
+					<div class="options">
+						<a href="javascript:void(0);" class="init">选择公司</a>
+						<a href="javascript:void(0);" class="redo">重新上传</a>
+					</div>
+					<div style="clear:both"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="DataStorage" style="display:none"></div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>管理员入口</title>
+<script type="text/javascript" src="scripts/jquery.min.js"></script>
+<script type="text/javascript" src="scripts/managerAction.js"></script>
+</head>
+<body>
+	<h1 align="center">管理员入口</h1> 
+		<div align="center"> 
+			<form name="reg" method="post" target="_self"> 
+				<table width="90%" border="0"> 
+					<tr>
+						<td width="50%" align="right" height="25">
+							<font face="Arial, Helvetica, sans-serif">请输入要注册的用户名：</font>
+						</td> 
+						<td width="50%" align="left" height="25"> 
+							<input onfocus="this.select()" type="text" id="name" name="name"> 
+							<font color="red">用户名为本人的手机号</font> 
+						</td> 
+					</tr> 
+					<tr> 
+						<td width="50%" align="right" height="25">请输入密码：</td> 
+						<td width="50%" align="left" height="25">
+							<input onfocus="this.select()" type="password" name="pwd" id="pwd">
+						</td> 
+					</tr> 
+					<tr> 
+						<td width="50%" align="right" height="25">请输入Email地址：</td> 
+						<td width="50%" align="left" height="25">
+							<input onfocus="this.select()" type="text" name="Email">
+						</td> 
+					</tr> 
+				</table> 
+				<p> 
+					<input type="button" name="sub" value="注册" id="register" />     
+					<input type="reset" name="res" value="重置"/> 
+					<input type="button" value="登录" id="login" />
+				</p> 
+			</form> 
+		</div> 
+
+</body>
+</html>

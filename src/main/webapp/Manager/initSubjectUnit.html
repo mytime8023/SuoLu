@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>公司信息</title>
+	<link rel="stylesheet" type="text/css" href="css/initSubjectsUnit.css">
+	<script type="text/javascript" src="scripts/jquery.min.js"></script>
+	<script type="text/javascript" src="scripts/initSubjectUnit.js"></script>
+	<script type="text/javascript" charset="utf-8" src="../scripts/layer/layer.js" ></script>
+	<script type="text/javascript" charset="utf-8" src="../scripts/tools/paisuanTools.js" ></script>
+</head>
+<body>
+	<div id="subjectTables">
+		<span id="title">数据加载中，请稍后......</span>
+		<div id="thead">
+			<div class="code">科目编码</div>
+			<div class="name">科目名称</div>
+			<div class="direction">借贷方向</div>
+			<div class="data">单位</div>
+			<div class="data">年初数量</div>
+			<div class="data">借方累计数量</div>
+			<div class="data">贷方累计数量</div>
+			<div class="data">期末数量</div>
+		</div>
+		<div id="gridScroller">
+			<div class="row">
+				<div class="subCode"></div>
+				<div class="subName"></div>
+				<div class="subDirection"></div>
+				<div class="subData"><input onClick="this.select()" class="unit"/></div>
+				<div class="subData"><input onClick="this.select()" class="ncsl"/></div>
+				<div class="subData"><input onClick="this.select()" class="jfljsl"/></div>
+				<div class="subData"><input onClick="this.select()" class="dfljsl"/></div>
+				<div class="subData"><input onClick="this.select()" class="qmsl"/></div>
+				<div style="clear:both"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

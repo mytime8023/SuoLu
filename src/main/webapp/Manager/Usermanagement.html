@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>索路管理系统</title>
+<link rel="stylesheet" type="text/css" href="themes/default/easyui.css" id="swicth-style">
+<style type="text/css">
+body {
+	font: 12px/20px "微软雅黑", "宋体", Arial, sans-serif, Verdana, Tahoma;
+	padding: 0;
+	margin: 0;
+	width:100%;
+	height:100%
+}
+.layout-split-proxy-h{
+	position:absolute;
+	width:2px;
+	background:#888;
+	font-size:1px;
+	cursor:e-resize;
+	display:none;
+	z-index:5
+}
+
+.layout-split-north{
+	border-bottom:5px solid #efefef;
+}
+.layout-split-south{
+	border-top:5px solid #efefef;
+}
+.layout-split-east{
+	border-left:0px solid #efefef;
+}
+.layout-split-west{
+	border-right:0px solid #efefef;
+}
+a:link {
+ text-decoration: none;
+}
+a:visited {
+ text-decoration: none;
+}
+a:hover {
+ text-decoration: underline;
+}
+a:active {
+ text-decoration: none;
+}
+.cs-north {
+	height:60px;
+}
+.cs-north-bg {
+	width: 100%;
+	height: 100%;
+}
+.cs-north-logo {
+	height: 40px;
+	margin: 15px 0px 0px 5px;
+	display: inline-block;
+	color:#000000;font-size:22px;font-weight:bold;text-decoration:none
+}
+.cs-west {
+	width:20%;
+}
+.cs-navi-tab {
+	padding: 5px;
+}
+.cs-tab-menu {
+	width:120px;
+}
+.cs-home-remark {
+	padding: 10px;
+}
+.wrapper {
+    float: right;
+    height: 30px;
+    margin-left: 10px;
+}
+.ui-skin-nav {
+    float: right;
+	padding: 0;
+	margin-right: 10px;
+	list-style: none outside none;
+	height: 30px;
+}
+
+.ui-skin-nav .li-skinitem {
+    float: left;
+    font-size: 12px;
+    line-height: 30px;
+	margin-left: 10px;
+    text-align: center;
+}
+.ui-skin-nav .li-skinitem span {
+	cursor: pointer;
+	width:10px;
+	height:10px;
+	display:inline-block;
+}
+.ui-skin-nav .li-skinitem span.cs-skin-on{
+	border: 1px solid #FFFFFF;
+}
+.ui-skin-nav .li-skinitem span.default{background-color:blue;}
+.shade{
+	display:none;
+	width: 100%;
+    height: 100%;
+    background-color: rgba(108, 113, 113, 0.52);
+    background-image:url(../images/busy.gif);
+	background-size:50px 50px;
+	background-repeat:no-repeat;
+	background-position:center;
+    z-index: 500;
+    position: relative;
+}
+.info{
+	width: 400px;
+    height: 25px;
+    line-height: 25px;
+    top: 55%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 15px;
+    color: #170B17;
+    font-weight: bold;
+    background-color: rgba(128, 224, 224, 0.78);
+    position: relative;
+}
+</style>
+</head>
+<body class="easyui-layout">
+	<!-- <ul id="source" style="display:none">
+		<li>../scripts/tools/paisuanTools.js</li>
+		<li>./scripts/employeeCRUD.js</li>
+	</ul> -->
+	<div region="north" border="true" class="cs-north">
+		<div class="cs-north-bg"  style="text-align:center">
+			<div class="cs-north-logo">索路管理中心</div>
+			<ul class="ui-skin-nav">				
+				<li id="logout" class="li-skinitem" title="default">注销</li>
+			</ul>	
+		</div>
+	</div>
+	<div data-options="region:'west',split:true,border:true" title="设置管理"  class="cs-west">
+		<div class="easyui-accordion" fit="true" border="false">
+			<div title="图片管理" style="padding:10px;">
+			</div>
+			<div title="视频管理">
+				
+			</div>
+			<div title="索路支持系统">
+				
+			</div>
+			<div title="索路客户管理">
+				<div id="xzcbjzlx" style="display: none;"></div>
+				<ul id="customerData" class="easyui-tree">   
+		       			<span>初始化公司数据</span>      			
+				</ul>
+			</div>
+			<div title="索路权限">
+				   
+		    		
+			</div>
+		</div>
+	</div>
+	<div id="mainPanle" data-options="region:'center'">
+		 <div id="tabs" class="easyui-tabs" data-options="fit:true,border:false,plain:true">
+            <div title="关于索路">
+				<div class="cs-home-remark">
+					<h1>关于索路</h1>
+				</div>
+			</div>
+        </div>
+	</div>
+	<div id="poplayer" style="display:none"></div>
+	<div id="bill" style="display:none"></div>
+	<div region="south" border="false" id="south"><center><a href="http://job.psjspt.net/" target="_blank">索路教育管理系统</a></center></div>
+	<div id="mm" class="easyui-menu cs-tab-menu">
+		<div id="mm-tabupdate">刷新</div>
+		<div class="menu-sep"></div>
+		<div id="mm-tabclose">关闭</div>
+		<div id="mm-tabcloseother">关闭其他</div>
+		<div id="mm-tabcloseall">关闭全部</div>
+	</div>
+	<!-- 隐藏层-->
+	<div id="localSubjects" style="dispaly:none"></div>
+	<div id="DataStorage" style="display:none"></div>
+	<div id="currentCompany" style="display:none"></div>
+	<div class="shade"><div class="info"></div></div>
+	<!-- 隐藏的消息层-->
+	<div id="initialSubjects" style="display:none"></div>
+	<div id="option_in_main" style="display:none"></div>
+	<div id="dynamicEvents" style="display:none"></div>
+	<div style="display:none">
+		<script type="text/javascript" src="scripts/jquery.min.js"></script>
+		<script type="text/javascript" src="scripts/jquery.easyui.min.js"></script>
+		<script type="text/javascript" src="scripts/jquery.accordion.js"></script>
+		<script type="text/javascript" src="../scripts/layer/layer.js"></script>
+		<script type="text/javascript" src="../scripts/tools/version.manager.js"></script>
+	</div>
+</body>
+</html>

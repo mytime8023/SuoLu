@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="css/ticketManageSystem.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+	<div class="tsContainer">
+		<div class="row"><span>问题处理终端</span></div>
+		<div class="row" style="margin-top:20px">
+			<div class="selector">
+				<div class="label">问题大类：</div>
+				<div class="container">
+					<select id="1"></select>
+				</div>
+			</div>
+			<div class="selector">
+				<div class="label">问题中类：</div>
+				<div class="container">
+					<select id="2"></select>
+				</div>
+			</div>
+			<div style="clear:both"></div>
+		</div>
+		<div class="cell" style="width:100%">
+			<div class="table" style="height:100%">
+				<div class="table-head">
+					<div class="table-row">
+						<div class="table-cell code">问题编号</div>
+						<div class="table-cell context">问题内容</div>
+						<div class="table-cell time">提交时间</div>
+						<div class="table-cell status">问题状态</div>
+						<div class="table-cell opteration">操作</div>
+						<div style="clear:both"></div>
+					</div>
+				</div>
+				<div class="table-body"></div>
+			</div>
+		</div>
+		<div class="cell" id="replies" style="width:40%"></div>
+		<div style="clear:both"></div>
+	</div>
+	<div id="reporsitory" style="display:none">
+		<div class="table-body-row">
+			<div class="table-cell code"></div>
+			<div class="table-cell context"></div>
+			<div class="table-cell time"></div>
+			<div class="table-cell status"></div>
+			<div class="table-cell opteration"><a href="javascript:void(0)" class="response">回复</a></div>
+			<div style="clear:both"></div>
+		</div>
+		<div class="reply-ticket">
+			<div class="record read-reply">
+				<div class="reply">
+					<div class="stamp">
+						<div class="user"></div>
+						<div class="time"></div>
+						<div style="clear:both"></div>
+					</div>
+					<div class="msg"></div>
+				</div>
+			</div>
+			<div class="record reply-input">
+				<div class="text"><textarea></textarea></div>
+				<div class="button"><button class="submit-message">回复</button></div>
+			</div>
+		</div>
+	</div>
+	<div id="source" style="display:none">
+		<script type="text/javascript" src="../scripts/jquery.min.js"></script>
+		<script type="text/javascript" src="../scripts/tools/paisuanTools.js" ></script>
+		<script type="text/javascript" src="../scripts/layer/layer.js" ></script>
+		<script type="text/javascript" src="scripts/ticketManageSystem.js"></script>
+	</div>
+</body>
+</html>

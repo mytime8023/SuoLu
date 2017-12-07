@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A basic demo of Cropper.">
+<meta name="keywords" content="HTML, CSS, JS, JavaScript, image cropping, cropper, cropperjs, cropper.js, front-end, web development">
+<meta name="author" content="Fengyuan Chen">
+<title>Cropper.js</title>
+<link rel="stylesheet" type="text/css" href="../css/button/css/default.css" />
+<link rel="stylesheet" type="text/css" href="../css/button/css/component.css" />
+<script type="text/javascript" charset="utf-8" src="../scripts/jquery.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="../scripts/jquery.rotate.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="../scripts/layer/layer.js"></script>
+<script type="text/javascript" charset="utf-8" src="../scripts/tools/paisuanTools.js"></script>
+<script type="text/javascript">
+	var billList=new Array();
+	var billLabel=null;
+	var tag=null;
+	var img=null;
+	$(document).ready(function(){
+		//获取URL参数
+        (function ($) {
+            $("body > div").hover(function(){
+    			$(".naviagator").css({"visibility":"visible"});
+    		},function(){
+    			$(".naviagator").css({"visibility":"hidden"});
+    		});
+        })(jQuery);
+        billLabel=$(".zoomedBill").clone(true);
+        tag = getUrlParam('tag');
+        img = getUrlParam('img');
+        appendPicture(billLabel.clone(true).show(),"getBillImage/"+img+"/jpg/initial");
+		$("#rotateImg,#rotateOK,.naviagator").hover(function(){
+			$("#rotateImg").show();
+		}, function() {
+			$("#rotateImg").hide();
+		});
+		var value = 0
+		var rotate = 0
+		$("#rotateImg").on("click", function() {
+			value += 90;
+			rotate = value % 360;//真实旋转值
+			if (rotate != 0) {
+				$("#rotateOK").show();
+			} else {
+				$("#rotateOK").hide();
+			}
+			$("#"+img).rotate({
+				animateTo:value
+			})
+		});
+		$("#rotateOK").on("click", function() {
+			$(this).hide();
+			$("#rotateImg").hide();
+			var load = layer.load();
+			console.log("rotate:" + rotate)
+			var filename = $(this).prev("img").attr("src");
+			$.ajax({
+				type : 'POST',
+				url : 'setCurrentRotation',
+				contentType : 'application/json',
+				datatype : 'json',
+				data : JSON.stringify({
+					billName : img,
+					requestNumber : rotate
+				}),
+				async : true,
+				success : function() {
+					//关闭load
+					layer.close(load);
+					//是否需要回调重新获取旋转后图片流媒体
+					layer.confirm('^o^旋转成功！关闭“图片旋转处理”窗口?', {icon: 3, title:'温馨提示'}, function(confirm){
+    					//当你在iframe页面关闭自身layer窗口时
+						var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+						parent.layer.close(index); //再执行关闭
+    					layer.close(confirm);
+    					//imgTag.attr("src","getBillImage/"+img+"/png");
+					});
+				}
+			});
+		});
+		var pointer=null;
+		var len=0;
+		$(".left").click(function(){
+			if(pointer==null){
+				pointer=getCurrentIndex();
+				navigator("prev");
+			}else{
+				navigator("prev");
+			}
+		});
+		$(".right").click(function(){
+			if(pointer==null){
+				pointer=getCurrentIndex();
+				navigator("next");
+			}else{
+				navigator("next");
+			}
+		});
+		function navigator(dir){
+			if(dir=="prev"){
+				pointer=pointer-1;
+				if(pointer>=0){
+					var bill=billList[pointer];
+					showPicture(bill.filename);
+					parent.frames["checkBill"].setCurrentBillSelected(bill.id);
+				}else{
+					pointer=0;
+					layer.msg("已经是本组第一张图片了");
+				}
+			}else{
+				pointer=pointer+1;
+				if(pointer<len){
+					var bill=billList[pointer];
+					showPicture(bill.filename);
+					parent.frames["checkBill"].setCurrentBillSelected(bill.id);
+				}else{
+					pointer=len-1;
+					layer.msg("已经是本组最后一张图片了");
+				}
+			}
+		}
+		function getCurrentIndex(){
+			billList=$.parseJSON($("#bill",parent.document).html()).billList;
+			len=billList.length;
+			var index=null;
+			for(var i=0;i<len;i++){
+				if(billList[i].filename==img){
+					index=i;
+					break;
+				}
+			}
+			return index;
+		}
+	});
+	function showPicture(filename){
+		var target=$("#"+filename)
+		if(target.length==0){
+			appendPicture(billLabel.clone(true).show(),"getBillImage/"+filename+"/jpg/initial");
+		}else{
+			$(".zoomedBill").hide();
+			target.show();
+		}
+	}
+	function appendPicture(image,url){
+		$(".zoomedBill").hide();
+		image.attr("src",url);
+		image.attr("id",url.split("/")[1]);
+		$(".hi-icon-effect-6").before(image);
+		$(".zoomedBill").hover(function(){
+			$("#rotateImg").show();
+		}, function() {
+			$("#rotateImg").hide();
+		});
+	}
+</script>
+</head>
+<body style="background-color: #cccccc">
+	<div style="width:90%; height:100%;text-align:center; margin:0 auto;">
+		<img id="img" class="zoomedBill" src="" style="margin-top:2%;max-width:100%;;display:none">
+		<div class="hi-icon-wrap hi-icon-effect-6">
+			<a id="rotateImg" class="hi-icon hi-icon-refresh"
+				style="position: fixed; top: 35%; left: 45%; display: none;"
+				title="点击按钮调整图片旋转角度"></a>
+		</div>
+		<div class="hi-icon-wrap hi-icon-effect-2 hi-icon-effect-2a">
+			<a id="rotateOK" class="hi-icon hi-icon-locked"
+				style="position: fixed; bottom: 10px; left: 45%; display: none;"
+				title="点击保存旋转后的图片"></a>
+		</div>
+		<div class="hi-icon-wrap hi-icon-effect-2 hi-icon-effect-2a naviagator">
+			<a class="pointer left">‹</a>
+			<a class="pointer right">›</a>
+		</div>
+	</div>
+</body>
+</html>

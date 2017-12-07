@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+	<title>客户信息</title>
+	<link rel="stylesheet" type="text/css" href="themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="themes/icon.css">
+	<script type="text/javascript" src="scripts/jquery.min.js"></script>
+	<script type="text/javascript" src="scripts/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="scripts/companym.js"></script>
+<!-- 	<link rel="stylesheet" type="text/css" href="themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="themes/icon.css">
+	<script type="text/javascript" src="scripts/jquery.min.js"></script>
+	<script type="text/javascript" src="scripts/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="scripts/accountAll.js"></script> -->
+	 <script type="text/javascript" charset="utf-8" src="../scripts/tools/paisuanTools.js"></script>
+	<script type="text/javascript" charset="utf-8" src="../scripts/layer/layer.js" ></script>
+</head>
+<body>
+  <table id="lp_company"> 
+  </table>
+ 	<div id="toolbar">
+		<a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="getCompanyName()">查询</a><input id="input_id"/>
+		<select id="selectAge">
+			<option value="0">公司模式</option>
+			<option value="true">线下公司</option>
+			<option value="false">线上公司</option>
+		</select>
+		<select style="width:100px;margin-top:10px;border: none;" name="selectAge" id="selectAge1">
+		<option value="2">公司类型</option>
+		<option value="0">小规模纳税人</option>
+		<option value="1">一般纳税人</option>
+		</select> 
+	</div>
+</body>
+	</html>

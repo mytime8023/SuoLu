@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>会计分配面板</title>
+	<link rel="stylesheet" type="text/css" href="css/AllotPanel.css">
+	<script type="text/javascript" charset="utf-8" src="scripts/jquery.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="../scripts/tools/paisuanTools.js"></script>
+	<script type="text/javascript" charset="utf-8" src="../scripts/layer/layer.js" ></script>
+	<script type="text/javascript" charset="utf-8" src="scripts/AllotPanel.js"></script>
+</head>
+<body>
+	<div id="layOut">
+		<div id="accountants" style="text-align:center">
+			<div class="head">
+				<span style="font-size:20px;font-weight:bold">可分配的会计列表</span>
+				<div class="header">
+					<div class="cell headerLeft">会计上次服务的公司</div>
+					<div class="cell headerRight">待分配公司的会计</div>
+				</div>
+			</div>
+			<div class="tbody">
+				<div class="inner">
+					<div class="row acc">
+						<div class="cell leftCell"></div>
+						<div class="cell rightCell"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="companies" style="text-align:center">
+			<div class="head">
+				<span style="font-size:20px;font-weight:bold">待分配的公司列表</span>
+				<div class="header">
+					<div class="cell headerLeft">上次为公司服务的会计</div>
+					<div class="cell headerRight">待分配会计的公司</div>
+				</div>
+			</div>
+			<div class="tbody">
+				<div class="inner">
+					<div class="row com">
+						<div class="cell leftCell"></div>
+						<div class="cell rightCell"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div style="clear:both"></div>
+		<div id="allotPanel">
+			<div id="left">
+				<input id="selectedAccountant" readOnly="true"/>
+			</div>
+			<div id="center">
+				<input id="conect" type="button" value="<<=>>"/>
+			</div>
+			<div id="right">
+				<input id="selectedCompany" readOnly="true"/>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>公司信息</title>
+	<link rel="stylesheet" type="text/css" href="css/initSubjects.css">
+	<link rel="stylesheet" type="text/css" href="themes/default/easyui.css" id="swicth-style">
+	<script type="text/javascript" charset="utf-8" src="../scripts/jquery.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="../scripts/tools/paisuanTools.js"></script>
+	<script type="text/javascript" charset="utf-8" src="../scripts/layer/layer.js" ></script>
+	<script type="text/javascript" charset="utf-8" src="scripts/initSubjects.js"></script>
+</head>
+<body>
+	<div id="subjectTables">
+		<div id="title">数据加载中...</div>
+		<div id="button">
+			<input type="button" class="initBtns" id="send" value="提&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;交"/>
+			<input type="button" class="initBtns" id="tryBalance" value="试&nbsp;&nbsp;算&nbsp;&nbsp;平&nbsp;&nbsp;衡"/>
+		</div>
+		<div style="clear:both"></div>
+		<div id="thead">
+			<div class="code">科目编码</div>
+			<div class="name">科目名称</div>
+			<div class="direction">方向</div>
+			<div class="unit">单位</div>
+			<div class="data">年初余额</div>
+			<div class="data">借方累计</div>
+			<div class="data">贷方累计</div>
+			<div class="data">期末余额</div>
+		</div>
+		<div id="gridScroller">
+			<div class="row">
+				<div class="subCode"></div>
+				<div class="subName">
+					<div class="del" title="删除科目"></div>
+					<input />
+					<div class="addUnit" title="启动数量单价式"></div>
+				</div>
+				<div class="subDirection"></div>
+				<div class="subUnit"></div>
+				<div class="subData"><input class="ncye"/></div>
+				<div class="subData"><input class="jflj"/></div>
+				<div class="subData"><input class="dflj"/></div>
+				<div class="subData"><input class="qcye"/></div>
+				<div style="clear:both"></div>
+			</div>
+		</div>
+	</div>
+	<div id="dialog">
+		<div id="dialogHeader">
+			<div id="title"></div>
+			<div id="closeDialog"></div>
+			<div style="clear:both"></div>
+		</div>
+		<div id="dialogContainer">
+			<div class="rows">
+				<div class="name"></div>
+				<div class="content"></div>
+				<div style="clear:both"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
